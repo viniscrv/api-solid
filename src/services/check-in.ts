@@ -1,20 +1,20 @@
 import { CheckIn } from "@prisma/client";
 import { CheckInsRepository } from "@/repositories/check-ins-repository";
 
-interface CheckinServiceRequest {
+interface CheckInServiceRequest {
     userId: string;
     gymId: string;
 }
 
-interface CheckinServiceResponse {
+interface CheckInServiceResponse {
     checkIn: CheckIn;
 }
 
-export class CheckinService {
+export class CheckInService {
     constructor(private checkInsRepository: CheckInsRepository) {
     }
 
-    async execute({ userId, gymId }: CheckinServiceRequest): Promise<CheckinServiceResponse> {
+    async execute({ userId, gymId }: CheckInServiceRequest): Promise<CheckInServiceResponse> {
         const checkIn = await this.checkInsRepository.create({
             gym_id: gymId,
             user_id: userId
