@@ -23,7 +23,7 @@ describe("Check-in Service", () => {
             phone: "",
             latitude: 0,
             longitude: 0
-        })
+        });
 
         vi.useFakeTimers();
     });
