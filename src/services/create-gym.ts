@@ -20,12 +20,12 @@ export class CreateGymService {
         this.gymsRepository = gymsRepository;
     }
 
-    async execute({ title, phone, description, latitude, longitude }: CreateGymServiceRequest): Promise<CreateGymServiceResponse> {
+    async execute({ title, description, phone, latitude, longitude }: CreateGymServiceRequest): Promise<CreateGymServiceResponse> {
 
         const gym = await this.gymsRepository.create({
             title,
-            phone,
             description,
+            phone,
             latitude,
             longitude
         });
