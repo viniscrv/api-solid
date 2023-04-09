@@ -13,7 +13,6 @@ export async function create(req: FastifyRequest, res: FastifyReply) {
         longitude: z.number().refine(value => {
             return Math.abs(value) <= 180;
         })
-
     });
 
     const { title, description, phone, latitude, longitude } = createGymBodySchema.parse(req.body);
