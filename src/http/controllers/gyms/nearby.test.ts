@@ -14,7 +14,7 @@ describe("Nearby Gyms (2e2)", () => {
 
     test("should be able to list nearby gyms", async () => {
 
-        const { token } = await createAndAutheticateUser(app);
+        const { token } = await createAndAutheticateUser(app, true);
 
         await request(app.server)
             .post("/gyms")
